@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace App\Core\Domain\User;
 
 use App\Core\Domain\User\Contract\PasswordEncoder;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Http\Authenticator\Passport\UserPassportInterface;
-use Symfony\Component\Uid\Uuid;
 
 class User implements UserInterface
 {
-    private Uuid $id;
+    private UserId $id;
     private string $username;
     private string $password;
 
@@ -23,19 +20,18 @@ class User implements UserInterface
      * @param string[] $roles
      */
     public function __construct(
-        Uuid $id,
         string $username,
         string $password,
         PasswordEncoder $passwordEncoder,
         array $roles
     ) {
-        $this->id = $id;
+        $this->id = new UserId();
         $this->username = $username;
         $this->password = $passwordEncoder->encodePassword($this, $password);
         $this->roles = $roles;
     }
 
-    public function getId(): Uuid
+    public function getId(): UserId
     {
         return $this->id;
     }
