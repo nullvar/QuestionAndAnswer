@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Users\Domain;
+namespace App\Core\Domain\User\Exception;
 
-use App\Common\Exceptions\DomainException;
+use App\Core\Domain\DomainException;
 
 final class UserNotFound extends DomainException
 {

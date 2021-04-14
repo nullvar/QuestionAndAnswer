@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Common\Exceptions;
+namespace App\Core\Domain;
 
 class DomainException extends \Exception
 {
