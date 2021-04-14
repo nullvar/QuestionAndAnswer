@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Core\Domain\User;
 
 use App\Core\Domain\User\Contract\PasswordEncoder;
-use Symfony\Component\Security\Core\User\UserInterface;
+use App\Core\Domain\User\Contract\User as UserInterface;
 
 class User implements UserInterface
 {
