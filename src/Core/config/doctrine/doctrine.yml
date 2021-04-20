@@ -1,9 +1,0 @@
-doctrine:
-  orm:
-    mappings:
-      User:
-        is_bundle: false
-        type: xml
-        dir: '%kernel.project_dir%/src/Core/Infrastructure/Persistence/User/Mapping'
-        prefix: 'App\Core\Domain\User'
-        alias: User
