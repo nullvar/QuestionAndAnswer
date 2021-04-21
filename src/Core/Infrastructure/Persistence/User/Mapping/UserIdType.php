@@ -7,6 +7,7 @@ namespace App\Core\Infrastructure\Persistence\User\Mapping;
 use App\Core\Domain\User\UserId;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
+use Symfony\Component\Uid\UuidV4;
 
 class UserIdType extends Type
 {
@@ -16,12 +17,16 @@ class UserIdType extends Type
     }
 
     /**
-     * @param string $value
+     * @param string|UuidV4 $value
      * @param AbstractPlatform $platform
      * @return UserId
      */
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
+        if ($value instanceof UuidV4) {
+            $value = (string) $value;
+        }
+
         return new UserId($value);
     }
 

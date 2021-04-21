@@ -29,5 +29,6 @@ class UserRepository extends EntityRepository implements UserWriteStorage, UserR
     public function add(UserDomainModel $user): void
     {
         $this->getEntityManager()->persist($user);
+        $this->getEntityManager()->flush();
     }
 }
