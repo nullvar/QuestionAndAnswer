@@ -31,20 +31,21 @@ class UserCommandService
 
     public function createUser(CreateUserCommand $command): UserId
     {
-        $user =
-            new User(
-                $command->getUsername(),
-                $command->getPassword(),
-                $this->passwordEncoder,
-                $command->getRoles()
-            )
-        ;
+        $userId = new UserId();
 
-        $this->transaction->transact(function () use ($user): void {
-            $this->userWriteStorage->add($user);
+        $this->transaction->transact(function() use ($userId, $command): void {
+            $this->userWriteStorage->add(
+                new User(
+                    $userId,
+                    $command->getUsername(),
+                    $command->getPassword(),
+                    $this->passwordEncoder,
+                    $command->getRoles()
+                )
+            );
         });
 
-        return $user->getId();
+        return $userId;
     }
 
     /**
@@ -52,9 +53,8 @@ class UserCommandService
      */
     public function changePassword(ChangeUserPasswordCommand $command): void
     {
-        $user = $this->getUser($command->getId());
-
-        $this->transaction->transact(function () use ($user, $command): void {
+        $this->transaction->transact(function() use ($command): void {
+            $user = $this->getUser($command->getId());
             $user->changePassword(
                 $command->getPassword(),
                 $this->passwordEncoder

@@ -20,12 +20,13 @@ class User implements UserInterface
      * @param string[] $roles
      */
     public function __construct(
+        UserId $id,
         string $username,
         string $password,
         PasswordEncoder $passwordEncoder,
         array $roles
     ) {
-        $this->id = new UserId();
+        $this->id = $id;
         $this->username = $username;
         $this->password = $passwordEncoder->encodePassword($this, $password);
         $this->roles = $roles;
