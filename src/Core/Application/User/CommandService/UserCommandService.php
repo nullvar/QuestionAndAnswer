@@ -11,14 +11,20 @@ use App\Core\Domain\User\Contract\UserWriteStorage;
 use App\Core\Domain\User\Exception\UserNotFound;
 use App\Core\Domain\User\User;
 use App\Core\Domain\User\UserId;
+use App\Core\Services\Persistence\Transaction;
 
 class UserCommandService
 {
     private PasswordEncoder $passwordEncoder;
     private UserWriteStorage $userWriteStorage;
+    private Transaction $transaction;
 
-    public function __construct(PasswordEncoder $passwordEncoder, UserWriteStorage $userWriteStorage)
-    {
+    public function __construct(
+        PasswordEncoder $passwordEncoder,
+        UserWriteStorage $userWriteStorage,
+        Transaction $transaction
+    ) {
+        $this->transaction = $transaction;
         $this->passwordEncoder = $passwordEncoder;
         $this->userWriteStorage = $userWriteStorage;
     }
@@ -34,7 +40,9 @@ class UserCommandService
             )
         ;
 
-        $this->userWriteStorage->add($user);
+        $this->transaction->transact(function () use ($user): void {
+            $this->userWriteStorage->add($user);
+        });
 
         return $user->getId();
     }
@@ -45,7 +53,13 @@ class UserCommandService
     public function changePassword(ChangeUserPasswordCommand $command): void
     {
         $user = $this->getUser($command->getId());
-        $user->changePassword($command->getPassword(), $this->passwordEncoder);
+
+        $this->transaction->transact(function () use ($user, $command): void {
+            $user->changePassword(
+                $command->getPassword(),
+                $this->passwordEncoder
+            );
+        });
     }
 
     /**
