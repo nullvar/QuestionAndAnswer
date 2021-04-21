@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Services\Persistence;
+namespace App\Core\Service\Persistence;
 
 interface Transaction
 {

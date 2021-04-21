@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Core\Infrastructure\Persistence;
 
-use App\Core\Services\Persistence\TransactionHandler;
+use App\Core\Service\Persistence\TransactionHandler;
 use Doctrine\ORM\EntityManagerInterface;
 
 class DoctrineTransactionHandler implements TransactionHandler

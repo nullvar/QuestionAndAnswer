@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Core\Infrastructure\Persistence;
 
-use App\Core\Services\Persistence\Transaction as TransactionInterface;
-use App\Core\Services\Persistence\TransactionHandler as TransactionHandlerInterface;
+use App\Core\Service\Persistence\Transaction as TransactionInterface;
+use App\Core\Service\Persistence\TransactionHandler as TransactionHandlerInterface;
 
 class Transaction implements TransactionInterface
 {
