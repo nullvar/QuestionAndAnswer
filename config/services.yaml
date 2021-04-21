@@ -33,6 +33,9 @@ services:
     App\Presentation\Console\Core\User\CreateUserConsoleCommand:
         tags: ['console.command']
 
+    App\Presentation\Console\Core\User\ChangeUserPasswordConsoleCommand:
+        tags: ['console.command']
+
     App\Core\Infrastructure\Persistence\User\UserRepository:
         factory: ['@doctrine.orm.default_entity_manager', getRepository]
         arguments:
