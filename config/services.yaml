@@ -42,4 +42,4 @@ services:
             - App\Core\Domain\User\User
 
     App\Core\Domain\User\Contract\PasswordEncoder:
-        alias: App\Core\Infrastructure\Persistence\User\PasswordEncoder
+        alias: App\Core\Infrastructure\Security\PasswordEncoder
