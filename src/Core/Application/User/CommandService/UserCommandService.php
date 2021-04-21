@@ -11,7 +11,7 @@ use App\Core\Domain\User\Contract\UserWriteStorage;
 use App\Core\Domain\User\Exception\UserNotFound;
 use App\Core\Domain\User\User;
 use App\Core\Domain\User\UserId;
-use App\Core\Services\Persistence\Transaction;
+use App\Core\Service\Persistence\Transaction;
 
 class UserCommandService
 {
