@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Presentation\Common\Core\User\Commands;
+namespace App\Presentation\Common\Core\User\Command;
 
-use App\Core\Application\User\CommandService\Contract\CreateUserCommand as CreateUserCommandInterface;
+use App\Core\Application\User\CommandService\CreateUserCommand as CreateUserCommandInterface;
 
 final class CreateUserCommand implements CreateUserCommandInterface
 {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Presentation\Console\Core\User;
 
 use App\Core\Application\User\CommandService\UserCommandService;
-use App\Presentation\Common\Core\User\Commands\CreateUserCommand;
+use App\Presentation\Common\Core\User\Command\CreateUserCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

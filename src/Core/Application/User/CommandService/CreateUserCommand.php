@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Application\User\CommandService\Contract;
+namespace App\Core\Application\User\CommandService;
 
 interface CreateUserCommand
 {

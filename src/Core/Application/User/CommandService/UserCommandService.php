@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace App\Core\Application\User\CommandService;
 
-use App\Core\Application\User\CommandService\Contract\ChangeUserPasswordCommand;
-use App\Core\Application\User\CommandService\Contract\CreateUserCommand;
-use App\Core\Domain\User\Contract\PasswordEncoder;
-use App\Core\Domain\User\Contract\UserWriteStorage;
+use App\Core\Domain\Security\PasswordEncoder;
+use App\Core\Domain\User\UserWriteStorage;
 use App\Core\Domain\User\Exception\UserNotFound;
 use App\Core\Domain\User\User;
 use App\Core\Domain\User\UserId;

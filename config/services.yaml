@@ -41,5 +41,5 @@ services:
         arguments:
             - App\Core\Domain\User\User
 
-    App\Core\Domain\User\Contract\PasswordEncoder:
+    App\Core\Domain\Security\PasswordEncoder:
         alias: App\Core\Infrastructure\Security\PasswordEncoder

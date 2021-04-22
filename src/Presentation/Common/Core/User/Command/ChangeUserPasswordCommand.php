@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Presentation\Common\Core\User\Commands;
+namespace App\Presentation\Common\Core\User\Command;
 
-use App\Core\Application\User\CommandService\Contract\ChangeUserPasswordCommand as ChangeUserPasswordCommandInterface;
+use App\Core\Application\User\CommandService\ChangeUserPasswordCommand as ChangeUserPasswordCommandInterface;
 use App\Core\Domain\User\UserId;
 
 final class ChangeUserPasswordCommand implements ChangeUserPasswordCommandInterface

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Core\Domain\User;
 
-use App\Core\Domain\User\Contract\PasswordEncoder;
-use App\Core\Domain\User\Contract\User as UserInterface;
+use App\Core\Domain\Security\PasswordEncoder;
+use App\Core\Domain\Security\User as SecurityUser;
 
-class User implements UserInterface
+class User implements SecurityUser
 {
     private UserId $id;
     private string $username;
