@@ -19,6 +19,7 @@ class Transaction implements TransactionInterface
     public function transact(callable $func): void
     {
         $this->transactionHandler->begin();
+
         try {
             call_user_func($func);
         } catch (\Throwable $throwable) {

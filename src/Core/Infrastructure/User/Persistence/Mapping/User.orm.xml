@@ -8,10 +8,7 @@
             repository-class="App\Core\Infrastructure\User\Persistence\UserRepository"
             table="users"
     >
-        <id name="id" type="user_id">
-            <generator strategy="CUSTOM" />
-            <custom-id-generator class="Symfony\Bridge\Doctrine\IdGenerator\UuidV4Generator" />
-        </id>
+        <id name="id" type="user_id" />
         <field name="username" type="string" length="100" />
         <field name="password" type="string" scale="100" />
     </entity>
