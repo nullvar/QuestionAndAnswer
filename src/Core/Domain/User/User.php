@@ -47,9 +47,9 @@ class User implements SecurityUser
         return $this->password;
     }
 
-    public function getSalt(): string
+    public function getSalt(): ?string
     {
-        return 'salt';
+        return null;
     }
 
     public function getUsername(): string
