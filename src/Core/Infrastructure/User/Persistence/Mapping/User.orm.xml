@@ -5,7 +5,7 @@
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
     <entity
             name="App\Core\Domain\User\User"
-            repository-class="App\Core\Infrastructure\Persistence\User\UserRepository"
+            repository-class="App\Core\Infrastructure\User\Persistence\UserRepository"
             table="users"
     >
         <id name="id" type="user_id">

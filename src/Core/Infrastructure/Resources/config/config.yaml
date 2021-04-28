@@ -1,0 +1,2 @@
+imports:
+  - { resource: '../../User/Resources/config/config.yaml' }

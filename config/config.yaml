@@ -1,0 +1,3 @@
+imports:
+  - { resource: 'services.yaml' }
+  - { resource: '../src/Core/Infrastructure/Resources/config/config.yaml' }

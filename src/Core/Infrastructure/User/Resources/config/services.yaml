@@ -1,0 +1,12 @@
+services:
+
+  App\Core\Infrastructure\Persistence\User\UserRepository:
+    factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
+    arguments:
+      - App\Core\Domain\User\User
+
+  App\Core\Domain\User\UserWriteStorage:
+    alias: App\Core\Infrastructure\Persistence\User\UserRepository
+
+  App\Core\Domain\Security\PasswordEncoder:
+    alias: App\Core\Infrastructure\Security\PasswordEncoder

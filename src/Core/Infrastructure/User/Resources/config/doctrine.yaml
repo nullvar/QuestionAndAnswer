@@ -1,0 +1,14 @@
+doctrine:
+  dbal:
+    types:
+      user_id: App\Core\Infrastructure\User\Persistence\Mapping\UserIdType
+
+  orm:
+    auto_mapping: false
+    mappings:
+      User:
+        is_bundle: false
+        type: xml
+        dir: '%kernel.project_dir%/src/Core/Infrastructure/User/Persistence/Mapping'
+        prefix: 'App\Core\Domain\User'
+        alias: User

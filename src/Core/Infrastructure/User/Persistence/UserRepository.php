@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Infrastructure\Persistence\User;
+namespace App\Core\Infrastructure\User\Persistence;
 
 use App\Core\Domain\User\User as UserDomainModel;
 use App\Core\Domain\User\UserId;

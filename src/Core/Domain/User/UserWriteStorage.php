@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Core\Domain\User;
 
 use App\Core\Domain\User\User as UserDomainModel;
-use App\Core\Domain\User\UserId;
 
 interface UserWriteStorage
 {

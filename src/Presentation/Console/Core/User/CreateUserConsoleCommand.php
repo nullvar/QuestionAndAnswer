@@ -41,12 +41,14 @@ final class CreateUserConsoleCommand extends Command
         /** @var string $password */
         $password = $input->getArgument('password');
 
-        $this->userCommandService->createUser(
+        $userId = $this->userCommandService->createUser(
             new CreateUserCommand(
                 $username,
                 $password
             )
         );
+
+        $output->writeln('User id: ' . $userId);
 
         return Command::SUCCESS;
     }

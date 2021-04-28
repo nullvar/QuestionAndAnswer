@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Infrastructure\Persistence\User\Mapping;
+namespace App\Core\Infrastructure\User\Persistence\Mapping;
 
 use App\Core\Domain\User\UserId;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
