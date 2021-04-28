@@ -1,4 +1,8 @@
 services:
+  
+  _defaults:
+    autowire: true
+    autoconfigure: true
 
   App\Core\Infrastructure\Persistence\User\UserRepository:
     factory: [ '@doctrine.orm.default_entity_manager', getRepository ]

@@ -1,0 +1,11 @@
+services:
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Presentation\Console\Core\User\CreateUserConsoleCommand:
+    tags: [ 'console.command' ]
+
+  App\Presentation\Console\Core\User\ChangeUserPasswordConsoleCommand:
+    tags: [ 'console.command' ]
