@@ -9,3 +9,7 @@ services:
 
   App\Presentation\Console\Core\User\ChangeUserPasswordConsoleCommand:
     tags: [ 'console.command' ]
+
+  App\Presentation\Http\UserInterface\Core\Controller\:
+    resource: '../../Http/UserInterface/Core/Controller/'
+    tags: ['controller.service_arguments']

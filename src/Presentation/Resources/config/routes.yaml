@@ -1,0 +1,3 @@
+login:
+  path: /login
+  controller: \App\Presentation\Http\UserInterface\Core\Controller\UserController::login
