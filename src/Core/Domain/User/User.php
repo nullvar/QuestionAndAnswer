@@ -14,7 +14,7 @@ class User implements SecurityUser
     private string $password;
 
     /** @var string[] */
-    private array $roles;
+    private array $roles = [];
 
     /**
      * @param string[] $roles

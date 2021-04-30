@@ -1,31 +1,36 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+
     providers:
-        users_in_memory: { memory: null }
+        database_users:
+            entity: { class: App\Core\Domain\User\User, property: username }
+
     firewalls:
+
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
         main:
             anonymous: true
             lazy: true
-            provider: users_in_memory
+            provider: database_users
 
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
+            form_login:
+                check_path: login
+                login_path: login
+                csrf_token_generator: security.csrf.token_manager
+                default_target_path: index
 
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
+            logout:
+                path: logout
+                target: index
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
     encoders:
-        # use your user class name here
         App\Core\Domain\User\User:
-            # Use native password encoder
-            # This value auto-selects the best possible hashing algorithm
-            # (i.e. Sodium when available).
             algorithm: auto

@@ -1,3 +1,11 @@
 login:
   path: /login
   controller: \App\Presentation\Http\UserInterface\Core\Controller\UserController::login
+
+logut:
+  path: /logut
+  controller: \App\Presentation\Http\UserInterface\Core\Controller\UserController::logout
+
+index:
+  path: /
+  controller: \App\Presentation\Http\UserInterface\Core\Controller\UserController::index
