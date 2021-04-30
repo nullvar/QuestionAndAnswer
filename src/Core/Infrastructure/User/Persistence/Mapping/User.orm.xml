@@ -9,7 +9,7 @@
             table="users"
     >
         <id name="id" type="user_id" />
-        <field name="username" type="string" length="100" />
+        <field name="username" type="string" length="100" unique="true" />
         <field name="password" type="string" scale="100" />
     </entity>
 </doctrine-mapping>
