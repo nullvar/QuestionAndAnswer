@@ -8,3 +8,6 @@ services:
     factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
     arguments:
       - App\Question\Domain\Profile\Profile
+
+  App\Question\Domain\Profile\ProfileWriteStorage:
+    alias: App\Question\Infrastructure\Profile\Persistence\ProfileRepository
