@@ -1,0 +1,10 @@
+services:
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Question\Infrastructure\Profile\Persistence\ProfileRepository:
+    factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
+    arguments:
+      - App\Question\Domain\Profile\Profile

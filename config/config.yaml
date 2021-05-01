@@ -2,4 +2,5 @@ imports:
   - { resource: 'services.yaml' }
   - { resource: '../src/Presentation/Resources/config/config.yaml' }
   - { resource: '../src/Core/Infrastructure/Resources/config/config.yaml' }
+  - { resource: '../src/Question/Infrastructure/Resources/config/config.yaml' }
 

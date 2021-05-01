@@ -11,4 +11,4 @@ doctrine:
         type: xml
         dir: '%kernel.project_dir%/src/Core/Infrastructure/User/Persistence/Mapping'
         prefix: 'App\Core\Domain\User'
-        alias: User
+        alias: App

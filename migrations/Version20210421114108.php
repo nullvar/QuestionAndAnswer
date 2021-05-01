@@ -9,7 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version20210421114108 extends AbstractMigration
 {
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         $this->addSql('CREATE TABLE users (
           id uuid NOT NULL,
@@ -19,7 +19,7 @@ final class Version20210421114108 extends AbstractMigration
         )');
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         $this->addSql('CREATE SCHEMA public');
         $this->addSql('DROP TABLE users');

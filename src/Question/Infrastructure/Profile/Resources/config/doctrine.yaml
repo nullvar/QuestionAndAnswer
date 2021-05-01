@@ -1,0 +1,14 @@
+doctrine:
+  dbal:
+    types:
+      profile_id: App\Question\Infrastructure\Profile\Persistence\Mapping\ProfileIdType
+
+  orm:
+    auto_mapping: false
+    mappings:
+      Profile:
+        is_bundle: false
+        type: xml
+        dir: '%kernel.project_dir%/src/Question/Infrastructure/Profile/Persistence/Mapping'
+        prefix: 'App\Question\Domain\Profile'
+        alias: App
