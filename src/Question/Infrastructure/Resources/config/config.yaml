@@ -1,2 +1,3 @@
 imports:
   - { resource: '../../Profile/Resources/config/config.yaml' }
+  - { resource: '../../Question/Resources/config/config.yaml'}

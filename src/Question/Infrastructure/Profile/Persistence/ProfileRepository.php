@@ -26,7 +26,6 @@ class ProfileRepository extends EntityRepository implements ProfileWriteStorage
      */
     public function add(Profile $profile): void
     {
-        // TODO: Implement add() method.
         $this->getEntityManager()->persist($profile);
     }
 }
