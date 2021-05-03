@@ -14,7 +14,7 @@
         <field name="id" type="question_id" unique="true" />
         <field name="title" type="string" length="250" />
         <field name="content" type="text" />
-        <field name="createdAt" type="date_immutable" />
+        <field name="createdAt" type="datetime_immutable" />
         <field name="createdBy" type="profile_id" />
     </entity>
 </doctrine-mapping>
