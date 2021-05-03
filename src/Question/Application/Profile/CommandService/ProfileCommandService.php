@@ -37,5 +37,4 @@ class ProfileCommandService
 
         return $profileId;
     }
-
 }

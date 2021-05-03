@@ -19,13 +19,12 @@ class Question
         QuestionId $id,
         string $title,
         string $content,
-        \DateTimeImmutable $createdAt,
         ProfileId $createdBy
     ) {
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;
-        $this->createdAt = $createdAt;
+        $this->createdAt = new \DateTimeImmutable();
         $this->createdBy = $createdBy;
     }
 
