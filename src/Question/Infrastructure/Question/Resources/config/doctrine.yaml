@@ -6,7 +6,7 @@ doctrine:
   orm:
     auto_mapping: false
     mappings:
-      Profile:
+      Question:
         is_bundle: false
         type: xml
         dir: '%kernel.project_dir%/src/Question/Infrastructure/Question/Persistence/Mapping'
