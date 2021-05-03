@@ -1,0 +1,14 @@
+doctrine:
+  dbal:
+    types:
+      answer_id: App\Question\Infrastructure\Answer\Persistence\Mapping\AnswerIdType
+
+  orm:
+    auto_mapping: false
+    mappings:
+      Answer:
+        is_bundle: false
+        type: xml
+        dir: '%kernel.project_dir%/src/Question/Infrastructure/Answer/Persistence/Mapping'
+        prefix: 'App\Question\Domain\Answer'
+        alias: App

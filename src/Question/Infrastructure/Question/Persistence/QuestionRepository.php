@@ -10,6 +10,9 @@ use Doctrine\ORM\EntityRepository;
 
 class QuestionRepository extends EntityRepository implements QuestionWriteStorage
 {
+    /**
+     * @throws \Doctrine\ORM\ORMException
+     */
     public function add(Question $question): void
     {
         $this->getEntityManager()->persist($question);
