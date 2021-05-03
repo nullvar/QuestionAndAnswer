@@ -15,12 +15,16 @@ class Answer
     private \DateTimeImmutable $createdAt;
     private ProfileId $createdBy;
 
-    public function __construct(AnswerId $id, string $content, QuestionId $belongsTo, \DateTimeImmutable $createdAt, ProfileId $createdBy)
-    {
+    public function __construct(
+        AnswerId $id,
+        string $content,
+        QuestionId $belongsTo,
+        ProfileId $createdBy
+    ) {
         $this->id = $id;
         $this->content = $content;
         $this->belongsTo = $belongsTo;
-        $this->createdAt = $createdAt;
+        $this->createdAt = new \DateTimeImmutable();
         $this->createdBy = $createdBy;
     }
 

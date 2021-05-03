@@ -16,6 +16,9 @@ services:
   App\Presentation\Console\Question\Question\CreateQuestionConsoleCommand:
     tags: [ 'console.command' ]
 
+  App\Presentation\Console\Question\Answer\CreateAnswerConsoleCommand:
+    tags: [ 'console.command' ]
+
   App\Presentation\Http\UserInterface\Core\Controller\:
     resource: '../../Http/UserInterface/Core/Controller/'
     tags: ['controller.service_arguments']
