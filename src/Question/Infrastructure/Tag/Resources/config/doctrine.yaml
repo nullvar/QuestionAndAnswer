@@ -1,0 +1,14 @@
+doctrine:
+  dbal:
+    types:
+      tag_id: App\Question\Infrastructure\Tag\Persistence\Mapping\TagIdType
+
+  orm:
+    auto_mapping: false
+    mappings:
+      Tag:
+        is_bundle: false
+        type: xml
+        dir: '%kernel.project_dir%/src/Question/Infrastructure/Tag/Persistence/Mapping'
+        prefix: 'App\Question\Domain\Tag'
+        alias: App

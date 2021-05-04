@@ -1,0 +1,13 @@
+services:
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Question\Infrastructure\Tag\Persistence\TagRepository:
+    factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
+    arguments:
+      - App\Question\Domain\Tag\Tag
+
+  App\Question\Domain\Tag\TagWriteStorage:
+    alias: App\Question\Infrastructure\Tag\Persistence\TagRepository
