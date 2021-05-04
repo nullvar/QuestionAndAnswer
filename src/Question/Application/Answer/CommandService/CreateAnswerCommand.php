@@ -10,6 +10,6 @@ use App\Question\Domain\Question\QuestionId;
 interface CreateAnswerCommand
 {
     public function getContent(): string;
-    public function getBelongsTo(): QuestionId;
+    public function getQuestionId(): QuestionId;
     public function getAuthorId(): AuthorId;
 }

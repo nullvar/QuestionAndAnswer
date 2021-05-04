@@ -11,13 +11,13 @@ use App\Question\Domain\Question\QuestionId;
 final class CreateAnswerCommand implements CreateAnswerCommandInterface
 {
     private string $content;
-    private string $belongsTo;
+    private string $questionId;
     private string $authorId;
 
-    public function __construct(string $content, string $belongsTo, string $authorId)
+    public function __construct(string $content, string $questionId, string $authorId)
     {
         $this->content = $content;
-        $this->belongsTo = $belongsTo;
+        $this->questionId = $questionId;
         $this->authorId = $authorId;
     }
 
@@ -26,9 +26,9 @@ final class CreateAnswerCommand implements CreateAnswerCommandInterface
         return $this->content;
     }
 
-    public function getBelongsTo(): QuestionId
+    public function getQuestionId(): QuestionId
     {
-        return new QuestionId($this->belongsTo);
+        return new QuestionId($this->questionId);
     }
 
     public function getAuthorId(): AuthorId

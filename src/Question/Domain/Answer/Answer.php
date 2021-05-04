@@ -11,19 +11,19 @@ class Answer
 {
     private AnswerId $id;
     private string $content;
-    private QuestionId $belongsTo;
+    private QuestionId $questionId;
     private \DateTimeImmutable $createdAt;
     private AuthorId $authorId;
 
     public function __construct(
         AnswerId $id,
         string $content,
-        QuestionId $belongsTo,
+        QuestionId $questionId,
         AuthorId $authorId
     ) {
         $this->id = $id;
         $this->content = $content;
-        $this->belongsTo = $belongsTo;
+        $this->questionId = $questionId;
         $this->createdAt = new \DateTimeImmutable();
         $this->authorId = $authorId;
     }
@@ -38,9 +38,9 @@ class Answer
         return $this->content;
     }
 
-    public function getBelongsTo(): QuestionId
+    public function getQuestionId(): QuestionId
     {
-        return $this->belongsTo;
+        return $this->questionId;
     }
 
     public function getCreatedAt(): \DateTimeImmutable

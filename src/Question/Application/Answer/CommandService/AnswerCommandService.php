@@ -31,7 +31,7 @@ class AnswerCommandService
                 new Answer(
                     $answerId,
                     $command->getContent(),
-                    $command->getBelongsTo(),
+                    $command->getQuestionId(),
                     $command->getAuthorId()
                 )
             );

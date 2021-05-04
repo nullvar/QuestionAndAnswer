@@ -10,7 +10,7 @@
     >
         <id name="id" type="answer_id" />
         <field name="content" type="text" />
-        <field name="belongsTo" type="question_id" />
+        <field name="questionId" type="question_id" />
         <field name="createdAt" type="datetime_immutable" />
         <field name="authorId" type="author_id" />
     </entity>
