@@ -13,19 +13,19 @@ class Question
     private string $title;
     private string $content;
     private \DateTimeImmutable $createdAt;
-    private AuthorId $createdBy;
+    private AuthorId $authorId;
 
     public function __construct(
         QuestionId $id,
         string $title,
         string $content,
-        AuthorId $createdBy
+        AuthorId $authorId
     ) {
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;
         $this->createdAt = new \DateTimeImmutable();
-        $this->createdBy = $createdBy;
+        $this->authorId = $authorId;
     }
 
     public function getId(): QuestionId
@@ -53,8 +53,8 @@ class Question
         return $this->createdAt;
     }
 
-    public function getCreatedBy(): AuthorId
+    public function getAuthorId(): AuthorId
     {
-        return $this->createdBy;
+        return $this->authorId;
     }
 }

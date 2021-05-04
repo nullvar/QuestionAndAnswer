@@ -31,7 +31,7 @@ class QuestionCommandService
                     $questionId,
                     $command->getTitle(),
                     $command->getContent(),
-                    $command->getCreatedBy()
+                    $command->getAuthorId()
                 )
             );
         });

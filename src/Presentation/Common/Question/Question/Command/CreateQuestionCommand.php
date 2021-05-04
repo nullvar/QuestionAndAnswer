@@ -12,13 +12,13 @@ final class CreateQuestionCommand implements CreateQuestionCommandInterface
 {
     private string $title;
     private string $content;
-    private string $createdBy;
+    private string $authorId;
 
-    public function __construct(string $title, string $content, string $createdBy)
+    public function __construct(string $title, string $content, string $authorId)
     {
         $this->title = $title;
         $this->content = $content;
-        $this->createdBy = $createdBy;
+        $this->authorId = $authorId;
     }
 
     public function getTitle(): string
@@ -31,8 +31,8 @@ final class CreateQuestionCommand implements CreateQuestionCommandInterface
         return $this->content;
     }
 
-    public function getCreatedBy(): AuthorId
+    public function getAuthorId(): AuthorId
     {
-        return new AuthorId($this->createdBy);
+        return new AuthorId($this->authorId);
     }
 }

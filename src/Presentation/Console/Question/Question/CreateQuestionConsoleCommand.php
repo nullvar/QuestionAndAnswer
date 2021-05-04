@@ -30,7 +30,7 @@ final class CreateQuestionConsoleCommand extends Command
             ->setHelp('This command allows you create a question')
             ->addArgument('title', InputArgument::REQUIRED, 'Title')
             ->addArgument('content', InputArgument::REQUIRED, 'Content')
-            ->addArgument('createdBy', InputArgument::REQUIRED, 'Create by author id')
+            ->addArgument('authorId', InputArgument::REQUIRED, 'Create by author id')
         ;
     }
 
@@ -42,14 +42,14 @@ final class CreateQuestionConsoleCommand extends Command
         /** @var string $content */
         $content = $input->getArgument('content');
 
-        /** @var string $createdBy */
-        $createdBy = $input->getArgument('createdBy');
+        /** @var string $authorId */
+        $authorId = $input->getArgument('authorId');
 
         $questionId = $this->questionCommandService->createQuestion(
             new CreateQuestionCommand(
                 $title,
                 $content,
-                $createdBy
+                $authorId
             )
         );
 
