@@ -24,11 +24,11 @@ class CreateAnswerConsoleCommand extends Command
     public function configure()
     {
         $this
-            ->setDescription('Create a new aswer')
+            ->setDescription('Create a new answer')
             ->setHelp('This command allows you create a answer')
             ->addArgument('content', InputArgument::REQUIRED, 'Content')
             ->addArgument('belongsTo', InputArgument::REQUIRED, 'A Question Id')
-            ->addArgument('createdBy', InputArgument::REQUIRED, 'A Author Id')
+            ->addArgument('authorId', InputArgument::REQUIRED, 'A Author Id')
         ;
     }
 
@@ -40,14 +40,14 @@ class CreateAnswerConsoleCommand extends Command
         /** @var string $belongsTo */
         $belongsTo = $input->getArgument('belongsTo');
 
-        /** @var string $createdBy */
-        $createdBy = $input->getArgument('createdBy');
+        /** @var string $authorId */
+        $authorId = $input->getArgument('authorId');
 
         $answerId = $this->answerCommandService->createAnswer(
             new CreateAnswerCommand(
                 $content,
                 $belongsTo,
-                $createdBy
+                $authorId
             )
         );
 

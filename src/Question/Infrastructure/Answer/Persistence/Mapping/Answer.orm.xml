@@ -12,6 +12,6 @@
         <field name="content" type="text" />
         <field name="belongsTo" type="question_id" />
         <field name="createdAt" type="datetime_immutable" />
-        <field name="createdBy" type="author_id" />
+        <field name="authorId" type="author_id" />
     </entity>
 </doctrine-mapping>

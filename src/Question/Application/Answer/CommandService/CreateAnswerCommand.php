@@ -11,5 +11,5 @@ interface CreateAnswerCommand
 {
     public function getContent(): string;
     public function getBelongsTo(): QuestionId;
-    public function getCreatedBy(): AuthorId;
+    public function getAuthorId(): AuthorId;
 }

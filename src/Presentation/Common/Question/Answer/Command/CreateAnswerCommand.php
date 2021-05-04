@@ -31,7 +31,7 @@ final class CreateAnswerCommand implements CreateAnswerCommandInterface
         return new QuestionId($this->belongsTo);
     }
 
-    public function getCreatedBy(): AuthorId
+    public function getAuthorId(): AuthorId
     {
         return new AuthorId($this->authorId);
     }

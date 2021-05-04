@@ -32,7 +32,7 @@ class AnswerCommandService
                     $answerId,
                     $command->getContent(),
                     $command->getBelongsTo(),
-                    $command->getCreatedBy()
+                    $command->getAuthorId()
                 )
             );
         });
