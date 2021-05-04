@@ -10,7 +10,7 @@ services:
   App\Presentation\Console\Core\User\ChangeUserPasswordConsoleCommand:
     tags: [ 'console.command' ]
 
-  App\Presentation\Console\Question\Profile\CreateProfileConsoleCommand:
+  App\Presentation\Console\Question\Author\CreateAuthorConsoleCommand:
     tags: [ 'console.command' ]
 
   App\Presentation\Console\Question\Question\CreateQuestionConsoleCommand:

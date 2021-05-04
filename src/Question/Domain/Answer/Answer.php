@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Question\Domain\Answer;
 
-use App\Question\Domain\Profile\ProfileId;
+use App\Question\Domain\Author\AuthorId;
 use App\Question\Domain\Question\QuestionId;
 
 class Answer
@@ -13,13 +13,13 @@ class Answer
     private string $content;
     private QuestionId $belongsTo;
     private \DateTimeImmutable $createdAt;
-    private ProfileId $createdBy;
+    private AuthorId $createdBy;
 
     public function __construct(
         AnswerId $id,
         string $content,
         QuestionId $belongsTo,
-        ProfileId $createdBy
+        AuthorId $createdBy
     ) {
         $this->id = $id;
         $this->content = $content;
@@ -48,7 +48,7 @@ class Answer
         return $this->createdAt;
     }
 
-    public function getCreatedBy(): ProfileId
+    public function getCreatedBy(): AuthorId
     {
         return $this->createdBy;
     }

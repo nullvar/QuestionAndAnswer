@@ -2,32 +2,32 @@
 
 declare(strict_types=1);
 
-namespace App\Presentation\Console\Question\Profile;
+namespace App\Presentation\Console\Question\Author;
 
-use App\Presentation\Common\Question\Profile\Command\CreateProfileCommand;
-use App\Question\Application\Profile\CommandService\ProfileCommandService;
+use App\Presentation\Common\Question\Author\Command\CreateAuthorCommand;
+use App\Question\Application\Author\CommandService\AuthorCommandService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CreateProfileConsoleCommand extends Command
+class CreateAuthorConsoleCommand extends Command
 {
-    private ProfileCommandService $profileCommandService;
+    private AuthorCommandService $authorCommandService;
 
     public function __construct(
-        ProfileCommandService $profileCommandService
+        AuthorCommandService $authorCommandService
     ) {
-        $this->profileCommandService = $profileCommandService;
+        $this->authorCommandService = $authorCommandService;
 
-        parent::__construct('app:profile:create');
+        parent::__construct('app:author:create');
     }
 
     protected function configure(): void
     {
         $this
-            ->setDescription('Create a new profile')
-            ->setHelp('This command allows you create a profile')
+            ->setDescription('Create a new author')
+            ->setHelp('This command allows you create a author')
             ->addArgument('name', InputArgument::REQUIRED, 'Name')
             ->addArgument('userId', InputArgument::REQUIRED, 'User id')
         ;
@@ -41,14 +41,14 @@ class CreateProfileConsoleCommand extends Command
         /** @var string $userId */
         $userId = $input->getArgument('userId');
 
-        $profileId = $this->profileCommandService->createProfile(
-            new CreateProfileCommand(
+        $authorId = $this->authorCommandService->createauthor(
+            new CreateAuthorCommand(
                 $name,
                 $userId
             )
         );
 
-        $output->writeln('Profile id: ' . $profileId);
+        $output->writeln('Author id: ' . $authorId);
 
         return Command::SUCCESS;
     }

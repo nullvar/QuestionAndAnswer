@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Question\Domain\Profile;
+namespace App\Question\Domain\Author;
 
 use App\Core\Domain\ValueObject\Id;
 
-final class ProfileId extends Id
+final class AuthorId extends Id
 {
 }

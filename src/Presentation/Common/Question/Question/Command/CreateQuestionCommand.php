@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Presentation\Common\Question\Question\Command;
 
 use App\Question\Application\Question\CommandService\CreateQuestionCommand as CreateQuestionCommandInterface;
-use App\Question\Domain\Profile\ProfileId;
+use App\Question\Domain\Author\AuthorId;
 use App\Question\Domain\Question\QuestionId;
 
 final class CreateQuestionCommand implements CreateQuestionCommandInterface
@@ -31,8 +31,8 @@ final class CreateQuestionCommand implements CreateQuestionCommandInterface
         return $this->content;
     }
 
-    public function getCreatedBy(): ProfileId
+    public function getCreatedBy(): AuthorId
     {
-        return new ProfileId($this->createdBy);
+        return new AuthorId($this->createdBy);
     }
 }

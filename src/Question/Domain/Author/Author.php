@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace App\Question\Domain\Profile;
+namespace App\Question\Domain\Author;
 
 use App\Core\Domain\User\UserId;
 
-class Profile
+class Author
 {
-    private ProfileId $id;
+    private AuthorId $id;
     private string $name;
     private UserId $userId;
 
-    public function __construct(ProfileId $id, string $name, UserId $userId)
+    public function __construct(AuthorId $id, string $name, UserId $userId)
     {
         $this->id = $id;
         $this->name = $name;
         $this->userId = $userId;
     }
 
-    public function getId(): ProfileId
+    public function getId(): AuthorId
     {
         return $this->id;
     }

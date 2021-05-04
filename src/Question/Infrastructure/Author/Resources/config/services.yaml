@@ -1,0 +1,13 @@
+services:
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Question\Infrastructure\Author\Persistence\AuthorRepository:
+    factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
+    arguments:
+      - App\Question\Domain\Author\Author
+
+  App\Question\Domain\Author\AuthorWriteStorage:
+    alias: App\Question\Infrastructure\Author\Persistence\AuthorRepository

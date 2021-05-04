@@ -28,7 +28,7 @@ class CreateAnswerConsoleCommand extends Command
             ->setHelp('This command allows you create a answer')
             ->addArgument('content', InputArgument::REQUIRED, 'Content')
             ->addArgument('belongsTo', InputArgument::REQUIRED, 'A Question Id')
-            ->addArgument('createdBy', InputArgument::REQUIRED, 'A Profile Id')
+            ->addArgument('createdBy', InputArgument::REQUIRED, 'A Author Id')
         ;
     }
 

@@ -30,7 +30,7 @@ final class CreateQuestionConsoleCommand extends Command
             ->setHelp('This command allows you create a question')
             ->addArgument('title', InputArgument::REQUIRED, 'Title')
             ->addArgument('content', InputArgument::REQUIRED, 'Content')
-            ->addArgument('createdBy', InputArgument::REQUIRED, 'Create by profile id')
+            ->addArgument('createdBy', InputArgument::REQUIRED, 'Create by author id')
         ;
     }
 

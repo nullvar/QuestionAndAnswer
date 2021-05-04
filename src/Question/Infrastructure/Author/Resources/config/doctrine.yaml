@@ -1,0 +1,14 @@
+doctrine:
+  dbal:
+    types:
+      Author_id: App\Question\Infrastructure\Author\Persistence\Mapping\AuthorIdType
+
+  orm:
+    auto_mapping: false
+    mappings:
+      Author:
+        is_bundle: false
+        type: xml
+        dir: '%kernel.project_dir%/src/Question/Infrastructure/Author/Persistence/Mapping'
+        prefix: 'App\Question\Domain\Author'
+        alias: App

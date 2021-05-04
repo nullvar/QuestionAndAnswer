@@ -4,11 +4,11 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
     <entity
-            name="App\Question\Domain\Profile\Profile"
-            repository-class="App\Question\Infrastructure\Profile\Persistence\ProfileRepository"
-            table="profiles"
+            name="App\Question\Domain\Author\Author"
+            repository-class="App\Question\Infrastructure\Author\Persistence\AuthorRepository"
+            table="authors"
     >
-        <id name="id" type="profile_id" />
+        <id name="id" type="author_id" />
         <field name="name" type="string" length="50" unique="true" />
         <field name="userId" type="user_id" />
     </entity>
